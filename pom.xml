@@ -20,7 +20,30 @@
         </dependency>
     </dependencies>
     <!-- end::joda[] -->
+    <distributionManagement>
 
+       <repository>
+
+           <id>releases</id>
+
+           <name>Nexus Release Repository</name>
+
+           <url>http://localhost:8082/repository/maven-releases/</url>
+
+       </repository>
+
+       <snapshotRepository>
+
+           <id>snapshots</id>
+
+           <name>Nexus Snapshot Repository</name>
+
+           <url>http://localhost:8082/repository/maven-snapshots/</url>
+
+       </snapshotRepository>
+
+   </distributionManagement>
+   
     <build>
         <plugins>
             <plugin>
