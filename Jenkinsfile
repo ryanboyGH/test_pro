@@ -27,7 +27,8 @@ pipeline {
   }
   post {
         always {
-            junit '*.xml'
+            sh 'touch report.xml'
+            junit 'report.xml'
         }
     }
   
