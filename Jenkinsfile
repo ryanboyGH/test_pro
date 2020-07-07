@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 pipeline {
-  agent any
+  agent {docker 'python:3.5.1'}
 
   stages {
     stage('Build') {
@@ -11,6 +11,7 @@ pipeline {
     stage('Test') {
         steps {
             echo 'Testing..'
+            sh 'python --version'
         }
     }
     stage('Deploy') {
