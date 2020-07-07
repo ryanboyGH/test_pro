@@ -19,11 +19,17 @@ pipeline {
             echo 'Deploying....'
         }
     }
+    stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }
   }
   post {
         always {
-            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-            junit 'build/reports/**/*.xml'
+            archiveArtifacts artifacts: '*.jar', fingerprint: true
+            junit '*.xml'
         }
     }
+  
 }
